@@ -15,7 +15,6 @@ using FlyCreator.Repositorys;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using IdentityServer4.AccessTokenValidation;
 
 namespace FlyCreator
 {
@@ -41,6 +40,7 @@ namespace FlyCreator
             services.AddCors(options => options.AddPolicy("AllowCors",
                 builder => builder.AllowAnyOrigin().WithMethods("GET", "PUT", "POST").AllowAnyHeader())
             );
+
 
             //services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
             //    .AddIdentityServerAuthentication(options =>

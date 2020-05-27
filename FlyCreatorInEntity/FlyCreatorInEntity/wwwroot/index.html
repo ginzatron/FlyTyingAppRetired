@@ -9,7 +9,27 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="google-signin-client_id" content="733506587937-chja2snvhu4cppd6ug4fnrp0bo2aqt8q.apps.googleusercontent.com">
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <!--had to Chrome: Settings  Advanced  Clear browsing data Cached images and files to get this to work-->
+    <script>
+        function onSignIn(googleUser) {
+            var id_token = googleUser.getAuthResponse().id_token;
+            sendGoogleToken(token: string): Observable < GoogleAuthResponse > {
+                return this.http.post<GoogleAuthResponse>(this.googleAuthUrl, token)
+                    .pipe(...);
+            }
+            var profile = googleUser.getBasicProfile();
+            console.log(profile.getId());
+            console.log(profile.getName());
+        }
 
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+                console.log('User signed out.');
+            });
+        }
+    </script>
 
+    <a href="#" onclick="signOut();">Sign out</a>
 </body>
 </html>
