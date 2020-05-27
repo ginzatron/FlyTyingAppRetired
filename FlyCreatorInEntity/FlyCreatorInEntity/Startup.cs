@@ -34,17 +34,20 @@ namespace FlyCreator
 
             services.AddDbContext<FlyDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddDbContext<MaterialsContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<UsersContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
+                .AddEntityFrameworkStores<UsersContext>();
 
             services.AddCors(options => options.AddPolicy("AllowCors",
                 builder => builder.AllowAnyOrigin().WithMethods("GET", "PUT", "POST").AllowAnyHeader())
             );
 
-            services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
-                .AddIdentityServerAuthentication(options =>
-                {
-                    options.Authority = "https://localhost:44358";
-                    options.ApiName = "flyApi";
-                });
+            //services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
+            //    .AddIdentityServerAuthentication(options =>
+            //    {
+            //        options.Authority = "https://localhost:44358";
+            //        options.ApiName = "flyApi";
+            //    });
 
             // add more explicit cors policy later
             //services.AddCors(options =>

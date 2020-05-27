@@ -5,10 +5,6 @@ VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlyCreatorInEntity", "FlyCreatorInEntity\FlyCreatorInEntity.csproj", "{B089B217-3C2B-4938-B78B-B16AA4A9BE2C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlackHole.IDP", "BlackHole.IDP\BlackHole.IDP.csproj", "{B235AC6B-DC01-4B48-BB32-5F9E8414431D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlyTyingFrontEnd", "FlyTyingFrontEnd\FlyTyingFrontEnd.csproj", "{8D3BB8F2-24B9-45AC-8929-7552FC0ACED6}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,14 +15,6 @@ Global
 		{B089B217-3C2B-4938-B78B-B16AA4A9BE2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B089B217-3C2B-4938-B78B-B16AA4A9BE2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B089B217-3C2B-4938-B78B-B16AA4A9BE2C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B235AC6B-DC01-4B48-BB32-5F9E8414431D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B235AC6B-DC01-4B48-BB32-5F9E8414431D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B235AC6B-DC01-4B48-BB32-5F9E8414431D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B235AC6B-DC01-4B48-BB32-5F9E8414431D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8D3BB8F2-24B9-45AC-8929-7552FC0ACED6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8D3BB8F2-24B9-45AC-8929-7552FC0ACED6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8D3BB8F2-24B9-45AC-8929-7552FC0ACED6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8D3BB8F2-24B9-45AC-8929-7552FC0ACED6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
