@@ -40,6 +40,8 @@ namespace BlackHole.IDP
                 .AddInMemoryApiResources(Config.Apis)
                 .AddInMemoryClients(Config.Clients);
 
+            builder.AddProfileService<LocalUserProfileService>();
+
             //var migrationAssembly = typeof(Startup)
             //    .GetTypeInfo().Assembly.GetName().Name;
 
