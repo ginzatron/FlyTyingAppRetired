@@ -65,6 +65,15 @@ namespace FlyCreator
             services.AddScoped<IFlyRepository, FlyRepository>();
             services.AddScoped<IComponentRepository, ComponentRepository>();
 
+            services.AddAuthentication()
+                .AddGoogle(options =>
+                {
+                    IConfigurationSection googleAuthNSection = Configuration.GetSection("Authentication:Google");
+
+                    options.ClientId = googleAuthNSection["ClientId"];
+                    options.ClientSecret = googleAuthNSection["ClientSecret"];
+                });
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

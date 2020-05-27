@@ -282,5 +282,6 @@ C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity
 C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\obj\Debug\netcoreapp3.0\FlyCreatorInEntity.genruntimeconfig.cache
 C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\obj\Debug\netcoreapp3.0\FlyCreatorInEntity.csprojAssemblyReference.cache
 C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.Authentication.Google.dll
 C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\obj\Debug\netcoreapp3.0\FlyCreatorInEntity.csproj.CoreCompileInputs.cache
 C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\obj\Debug\netcoreapp3.0\FlyCreator.MvcApplicationPartsAssemblyInfo.cache

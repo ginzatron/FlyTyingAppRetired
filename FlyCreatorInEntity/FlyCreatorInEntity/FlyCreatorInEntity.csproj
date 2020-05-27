@@ -1,5 +1,5 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <PackageId>FlyCreator</PackageId>
@@ -7,15 +7,14 @@
     <Product>FlyCreator</Product>
     <RootNamespace>FlyCreator</RootNamespace>
     <AssemblyName>FlyCreator</AssemblyName>
+    <UserSecretsId>cab2a3d6-2f3c-4b98-8b42-4ee180278568</UserSecretsId>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Remove="Profiles\**" />
     <Content Remove="Profiles\**" />
     <EmbeddedResource Remove="Profiles\**" />
     <None Remove="Profiles\**" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Remove="Migrations\20191201182254_2019_12_01_Initial_Migration.cs" />
     <Compile Remove="Migrations\20191201182254_2019_12_01_Initial_Migration.Designer.cs" />
@@ -26,9 +25,9 @@
     <Compile Remove="Migrations\20200510181454_Add_Identiy_stores.cs" />
     <Compile Remove="Migrations\20200510181454_Add_Identiy_stores.Designer.cs" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="3.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.1" />
@@ -40,9 +39,4 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\" />
-  </ItemGroup>
-
 </Project>
