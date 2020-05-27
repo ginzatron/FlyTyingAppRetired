@@ -3,6 +3,7 @@
 
 
 using BlackHole.IDP.DbContexts;
+using Marvin.IDP.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -31,6 +32,8 @@ namespace BlackHole.IDP
             });
 
             //var blackHoleIdpDBConnectionString = "Server=.\\sqlexpress;Initial Catalog=blackHoleIdpDB;Integrated Security=True";
+
+            services.AddScoped<ILocalUserService, LocalUserService>();
 
             var builder = services.AddIdentityServer()
                 .AddInMemoryIdentityResources(Config.Ids)
