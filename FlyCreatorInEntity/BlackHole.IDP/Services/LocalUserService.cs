@@ -1,6 +1,5 @@
 ﻿using BlackHole.IDP.DbContexts;
-using Marvin.IDP.DbContexts;
-using Marvin.IDP.Entities;
+using BlackHole.IDP.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
