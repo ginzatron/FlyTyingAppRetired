@@ -10,7 +10,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using static Google.Apis.Auth.GoogleJsonWebSignature;
 
 namespace FlyCreator.Controllers
 {
