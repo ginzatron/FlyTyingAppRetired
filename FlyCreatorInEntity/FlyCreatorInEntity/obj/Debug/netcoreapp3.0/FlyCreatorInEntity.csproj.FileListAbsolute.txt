@@ -282,3 +282,4 @@ C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity
 C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\obj\Debug\netcoreapp3.0\FlyCreator.dll
 C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\obj\Debug\netcoreapp3.0\FlyCreator.pdb
 C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\obj\Debug\netcoreapp3.0\FlyCreatorInEntity.genruntimeconfig.cache
+C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\obj\Debug\netcoreapp3.0\FlyCreatorInEntity.csprojAssemblyReference.cache

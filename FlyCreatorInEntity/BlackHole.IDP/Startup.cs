@@ -2,6 +2,7 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
+using BlackHole.IDP.DbContexts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -24,7 +25,12 @@ namespace BlackHole.IDP
         {
             services.AddControllersWithViews();
 
-            var blackHoleIdpDBConnectionString = "Server=.\\sqlexpress;Initial Catalog=blackHoleIdpDB;Integrated Security=True";
+            services.AddDbContext<IdentityDbContext>(options =>
+            {
+                options.UseSqlServer("Server=.\\sqlexpress;Initial Catalog=blackHoleIdpDB;Integrated Security=True");
+            });
+
+            //var blackHoleIdpDBConnectionString = "Server=.\\sqlexpress;Initial Catalog=blackHoleIdpDB;Integrated Security=True";
 
             var builder = services.AddIdentityServer()
                 .AddInMemoryIdentityResources(Config.Ids)
