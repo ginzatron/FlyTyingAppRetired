@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "tS6oES79YtL1J0pYkjeu66MNdghcisJjIv98ES4/R1e+wJL2tMgfGrCIewswiHBpVlGGfL9JSFXhgI9wMmvzQg==",
+  "dgSpecHash": "6iQdsKviofY6JHI2JTedv1bBZEmk6c2Pp3nQWbniruoeaty+Hdwfi/w1btPwHvb+Y0NSxyZoZch9GyT/OzCpsw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Noah\\Documents\\GitHub\\FlyTyingApp\\FlyCreatorInEntity\\FlyCreatorInEntity\\FlyCreatorInEntity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Noah\\.nuget\\packages\\identitymodel\\4.0.0\\identitymodel.4.0.0.nupkg.sha512",
     "C:\\Users\\Noah\\.nuget\\packages\\identitymodel.aspnetcore.oauth2introspection\\4.0.1\\identitymodel.aspnetcore.oauth2introspection.4.0.1.nupkg.sha512",
     "C:\\Users\\Noah\\.nuget\\packages\\identityserver4.accesstokenvalidation\\3.0.1\\identityserver4.accesstokenvalidation.3.0.1.nupkg.sha512",
+    "C:\\Users\\Noah\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\3.0.0\\microsoft.aspnetcore.authentication.google.3.0.0.nupkg.sha512",
     "C:\\Users\\Noah\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.0.0\\microsoft.aspnetcore.authentication.jwtbearer.3.0.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.cors\\2.2.0\\microsoft.aspnetcore.cors.2.2.0.nupkg.sha512",
     "C:\\Users\\Noah\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.0.0\\microsoft.aspnetcore.cryptography.internal.3.0.0.nupkg.sha512",
