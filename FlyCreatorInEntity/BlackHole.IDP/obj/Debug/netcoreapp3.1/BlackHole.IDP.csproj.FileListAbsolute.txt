@@ -168,7 +168,6 @@ C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\BlackHole.IDP\bin\
 C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\BlackHole.IDP\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\BlackHole.IDP\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\BlackHole.IDP\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\BlackHole.IDP\obj\Debug\netcoreapp3.1\BlackHole.IDP.csprojAssemblyReference.cache
 C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\BlackHole.IDP\obj\Debug\netcoreapp3.1\BlackHole.IDP.csproj.CoreCompileInputs.cache
 C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\BlackHole.IDP\obj\Debug\netcoreapp3.1\BlackHole.IDP.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\BlackHole.IDP\obj\Debug\netcoreapp3.1\BlackHole.IDP.RazorAssemblyInfo.cache
@@ -205,3 +204,4 @@ C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\BlackHole.IDP\obj\
 C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\BlackHole.IDP\obj\Debug\netcoreapp3.1\BlackHole.IDP.dll
 C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\BlackHole.IDP\obj\Debug\netcoreapp3.1\BlackHole.IDP.pdb
 C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\BlackHole.IDP\obj\Debug\netcoreapp3.1\BlackHole.IDP.genruntimeconfig.cache
+C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\BlackHole.IDP\obj\Debug\netcoreapp3.1\BlackHole.IDP.csprojAssemblyReference.cache

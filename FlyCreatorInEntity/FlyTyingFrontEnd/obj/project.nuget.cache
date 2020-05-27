@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZDsa64WsHS5JLjrk3rvugemxG6GZdUSWfFb0NbwOaNmJv1RAHVl0Xmh+1N76pIWlZggCRW9EjBWvWM0nlqmK2w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Noah\\Documents\\GitHub\\FlyTyingApp\\FlyCreatorInEntity\\FlyTyingFrontEnd\\FlyTyingFrontEnd.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Noah\\.nuget\\packages\\microsoft.typescript.msbuild\\3.9.2\\microsoft.typescript.msbuild.3.9.2.nupkg.sha512",
+    "C:\\Users\\Noah\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.0.3\\microsoft.netcore.app.host.win-x64.3.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
