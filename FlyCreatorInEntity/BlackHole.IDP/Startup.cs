@@ -38,8 +38,7 @@ namespace BlackHole.IDP
             var builder = services.AddIdentityServer()
                 .AddInMemoryIdentityResources(Config.Ids)
                 .AddInMemoryApiResources(Config.Apis)
-                .AddInMemoryClients(Config.Clients)
-                .AddTestUsers(TestUsers.Users);
+                .AddInMemoryClients(Config.Clients);
 
             //var migrationAssembly = typeof(Startup)
             //    .GetTypeInfo().Assembly.GetName().Name;
