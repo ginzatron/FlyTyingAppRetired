@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using FlyCreator.DataLayer;
 using FlyCreator.Models;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -15,6 +17,7 @@ namespace FlyCreator.Controllers
 {
     [Route("api/admin")]
     [ApiController]
+    //[Authorize]
     public class AdminController : ControllerBase
     {
         // TODOs: create UsersContextrepository
@@ -29,6 +32,12 @@ namespace FlyCreator.Controllers
             _signInManager = signInManager;
             _userManager = userManager;
         }
+
+        //[HttpPost("token")]
+        //public async Task GetToken(JwtBearerDefaults token)
+        //{
+        //    var gottenT = token;
+        //}
 
         [HttpPost("register")]
         public async Task<IActionResult> RegisterUser(Registration newUser)

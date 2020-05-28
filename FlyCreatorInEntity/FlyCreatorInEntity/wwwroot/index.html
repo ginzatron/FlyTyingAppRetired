@@ -11,15 +11,28 @@
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <!--had to Chrome: Settings  Advanced  Clear browsing data Cached images and files to get this to work-->
     <script>
-        function onSignIn(googleUser) {
+        async function onSignIn(googleUser) {
             var id_token = googleUser.getAuthResponse().id_token;
-            sendGoogleToken(token: string): Observable < GoogleAuthResponse > {
-                return this.http.post<GoogleAuthResponse>(this.googleAuthUrl, token)
-                    .pipe(...);
-            }
-            var profile = googleUser.getBasicProfile();
-            console.log(profile.getId());
-            console.log(profile.getName());
+            let url = "https://localhost:44329/api/admin/";
+            console.log(id_token);
+            // var xhr = new XMLHttpRequest();
+            // xhr.open("POST", url);
+            // //xhr.onload = function () {
+            // //    console.log(xhr.status, JSON.parse(xhr.responseText));
+            // //}
+            // //xhr.setRequestHeader("Authorization", "Bearer " + id_token);
+            //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            //xhr.send(id_token);
+
+            const response = await fetch(url+id_token.toString(), {
+                method: 'get',
+                headers: {
+                    'Content-Type': 'application/json'
+                    //'Authorization': 'Bearer ' + id_token
+                },
+            });
+
+           // var profile = googleUser.getBasicProfile();
         }
 
         function signOut() {

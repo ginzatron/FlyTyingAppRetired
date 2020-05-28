@@ -74,6 +74,13 @@ namespace FlyCreator
                     options.ClientSecret = googleAuthNSection["ClientSecret"];
                 });
 
+            //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            //    .AddJwtBearer(options =>
+            //    {
+            //        options.Authority = "https://accounts.google.com";
+            //        options.Audience = "flyApi";
+            //    });
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
