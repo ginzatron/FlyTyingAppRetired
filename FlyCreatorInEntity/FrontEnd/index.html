@@ -8,9 +8,19 @@
 </head>
 
 <body>
-    <button id="getFlys">click to get all flys</button>
-    <button id="getFly">click to get single fly</button>
+    <div>
+        <button id="getFlys">click to get all flys</button>
+    </div>
 
+    <form class="getFlyForm">
+        <label for='flyId'>Fly Id</label>
+        <input id='flyId' name='flyId' type='text'></input>
+        <input type='submit' value="GetFly">
+    </form>
+
+    <button id="register" disabled>Register User</button>
+
+    <div class="flyContainer"></div>
 
     <script src="api.js"></script>
 </body>
