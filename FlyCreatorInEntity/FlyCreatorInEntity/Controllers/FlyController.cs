@@ -15,7 +15,7 @@ namespace FlyCreatorInEntity.Controllers
 {
     [Route("api/fly")]
     [ApiController]
-    //[Authorize]
+    [Authorize]
     public class FlyController : ControllerBase
     {
         private readonly IFlyRepository _flyRepo;
