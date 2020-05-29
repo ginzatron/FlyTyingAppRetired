@@ -61,11 +61,21 @@ namespace FlyCreator.Controllers
 
             if (tokenVerified)
             {
-                //  check to see if they are already registered
+                // need something other than email, maybe sub
+                var registeredUser = await _userManager.FindByEmailAsync(payload.Email);
 
-                //  if not put them in the DB
+                //  if not registered, register them
+                if (registeredUser == null)
+                {
+                    var newUser = new Registration()
+                    {
+                        Email = payload.Email
+                    };
 
-                //  log them in
+                    await RegisterUser(newUser);
+                }
+                else
+                    await LogInUser(registeredUser);
             }
         }
 
@@ -80,7 +90,7 @@ namespace FlyCreator.Controllers
                     Email = newUser.Email
                 };
 
-                var result = await _userManager.CreateAsync(user, newUser.Password);
+                var result = await _userManager.CreateAsync(user);
 
                 if (result.Succeeded)
                     await _signInManager.SignInAsync(user, isPersistent: false);
@@ -90,14 +100,14 @@ namespace FlyCreator.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> LogInUser(LogIn login)
+        public async Task<IActionResult> LogInUser(IdentityUser registeredUser)
         {
             if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(login.Email, login.Password, login.RememberMe, lockoutOnFailure: false);
+                await _signInManager.SignInAsync(registeredUser, isPersistent: false);
 
-                if (result.Succeeded)
-                    return Ok();
+                //if (result.Succeeded)
+               return Ok();
             }
 
             return NotFound();
