@@ -280,5 +280,9 @@ C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity
 C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\bin\Debug\netcoreapp3.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\bin\Debug\netcoreapp3.0\Google.Apis.dll
+C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\bin\Debug\netcoreapp3.0\Google.Apis.Auth.PlatformServices.dll
+C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\bin\Debug\netcoreapp3.0\Google.Apis.Auth.dll
+C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\bin\Debug\netcoreapp3.0\Google.Apis.Core.dll
 C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\obj\Debug\netcoreapp3.0\FlyCreatorInEntity.csproj.CoreCompileInputs.cache
 C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\obj\Debug\netcoreapp3.0\FlyCreator.MvcApplicationPartsAssemblyInfo.cache
