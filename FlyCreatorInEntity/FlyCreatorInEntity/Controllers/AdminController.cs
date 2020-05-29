@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
 using FlyCreator.DataLayer;
 using FlyCreator.Models;
+using Google.Apis.Auth;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -12,6 +14,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.EntityFrameworkCore.Update;
+using static Google.Apis.Auth.GoogleJsonWebSignature;
 
 namespace FlyCreator.Controllers
 {
@@ -37,6 +41,32 @@ namespace FlyCreator.Controllers
         public async Task GetToken(GoogleToken token)
         {
             var gottenT = token.token;
+
+            // make a config
+            var audienceList = new List<string>()
+            {
+                "733506587937-chja2snvhu4cppd6ug4fnrp0bo2aqt8q.apps.googleusercontent.com"
+            };
+
+            // first check audience 
+            var payload = GoogleJsonWebSignature.ValidateAsync(gottenT, new GoogleJsonWebSignature.ValidationSettings()
+            {
+                Audience = audienceList
+            }).Result;
+
+            // then check issuer
+            var issuerClaim = (payload.Issuer == "accounts.google.com" || payload.Issuer == "https://accounts.google.com");
+
+            var tokenVerified = (payload != null && issuerClaim == true);
+
+            if (tokenVerified)
+            {
+                //  check to see if they are already registered
+
+                //  if not put them in the DB
+
+                //  log them in
+            }
         }
 
         [HttpPost("register")]

@@ -26,6 +26,7 @@
     <Compile Remove="Migrations\20200510181454_Add_Identiy_stores.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Google.Apis.Auth" Version="1.45.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="3.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
