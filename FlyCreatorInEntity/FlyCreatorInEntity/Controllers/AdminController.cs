@@ -33,11 +33,11 @@ namespace FlyCreator.Controllers
             _userManager = userManager;
         }
 
-        //[HttpPost("token")]
-        //public async Task GetToken(JwtBearerDefaults token)
-        //{
-        //    var gottenT = token;
-        //}
+        [HttpPost("token")]
+        public async Task GetToken(GoogleToken token)
+        {
+            var gottenT = token.token;
+        }
 
         [HttpPost("register")]
         public async Task<IActionResult> RegisterUser(Registration newUser)
