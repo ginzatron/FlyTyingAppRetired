@@ -77,7 +77,6 @@ async function GetFly(event) {
 async function onSignIn(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;
     let url = "https://localhost:44329/api/admin/token";
-    console.log(id_token);
 
     const response = await fetch(url, {
         method: 'POST',
