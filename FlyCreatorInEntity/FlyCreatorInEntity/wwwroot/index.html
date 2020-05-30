@@ -15,14 +15,6 @@
             var id_token = googleUser.getAuthResponse().id_token;
             let url = "https://localhost:44329/api/admin/token";
             console.log(id_token);
-            // var xhr = new XMLHttpRequest();
-            // xhr.open("POST", url);
-            // //xhr.onload = function () {
-            // //    console.log(xhr.status, JSON.parse(xhr.responseText));
-            // //}
-            // //xhr.setRequestHeader("Authorization", "Bearer " + id_token);
-            //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            //xhr.send(id_token);
 
             const response = await fetch(url, {
                 method: 'POST',
@@ -44,7 +36,7 @@
            // var profile = googleUser.getBasicProfile();
         }
 
-        function signOut() {
+        async function signOut() {
             var auth2 = gapi.auth2.getAuthInstance();
             auth2.signOut().then(function () {
                 console.log('User signed out.');
