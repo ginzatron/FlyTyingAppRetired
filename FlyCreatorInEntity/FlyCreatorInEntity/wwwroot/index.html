@@ -2,56 +2,28 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <meta name="google-signin-client_id" content="733506587937-chja2snvhu4cppd6ug4fnrp0bo2aqt8q.apps.googleusercontent.com">
+    <title>TheVise</title>
 </head>
 <body>
-    hello
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" content="733506587937-chja2snvhu4cppd6ug4fnrp0bo2aqt8q.apps.googleusercontent.com">
+    <div>
+        <button id="getFlys">click to get all flys</button>
+        <div class="flyContainer"></div>
+    </div>
+
+    <form class="getFlyForm">
+        <label for='flyId'>Fly Id</label>
+        <input id='flyId' name='flyId' type='text' />
+        <input type='submit' value="GetFly">
+    </form>
+
+    <button id="register" disabled>Register User</button>
+
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
-    <!--had to Chrome: Settings  Advanced  Clear browsing data Cached images and files to get this to work-->
-    <script>
-        async function onSignIn(googleUser) {
-            var id_token = googleUser.getAuthResponse().id_token;
-            let url = "https://localhost:44329/api/admin/token";
-            console.log(id_token);
-
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    //'Authorization': 'Bearer ' + id_token
-                },
-                body: JSON.stringify({"token":id_token})
-            });
-
-            //var xhr = new XMLHttpRequest();
-            //xhr.open("GET", url);
-            ////xhr.onload = function () {
-            ////    log(xhr.status, JSON.parse(xhr.responseText));
-            ////}
-            //xhr.setRequestHeader("Authorization", "Bearer " + id_token);
-            //xhr.send();
-
-           // var profile = googleUser.getBasicProfile();
-        }
-
-        async function signOut() {
-            var auth2 = gapi.auth2.getAuthInstance();
-            auth2.signOut().then(function () {
-                console.log('User signed out.');
-            });
-
-            await fetch("https://localhost:44329/api/admin/logout", {
-                method: "post",
-                headers: {
-                    'Content-Type': 'application/json',
-                    //'Authorization': 'Bearer ' + id_token
-                }
-            });
-        }
-    </script>
 
     <a href="#" onclick="signOut();">Sign out</a>
+
+    <script src="app.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 </body>
 </html>
