@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FlyCreator.Models
+namespace FlyCreator.Interfaces
 {
-    public class GoogleRegistration
+    public interface IExternalLogInToken
     {
+        string Id_Token { get; set; }
     }
 }
