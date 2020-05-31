@@ -17,7 +17,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.EntityFrameworkCore.Update;
-using static Google.Apis.Auth.GoogleJsonWebSignature;
 
 namespace FlyCreator.Controllers
 {
@@ -38,7 +37,7 @@ namespace FlyCreator.Controllers
         }
 
         [HttpPost("token")]
-        public async Task GetToken(GoogleToken token)
+        public async Task GetToken(ExternalLogInToken token)
         {
             var payload = _validator.GeneratePayload(token);
             var isValidToken = _validator.ValidateToken(payload);
