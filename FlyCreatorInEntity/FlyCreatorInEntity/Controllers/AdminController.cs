@@ -26,16 +26,12 @@ namespace FlyCreator.Controllers
     //[Authorize]
     public class AdminController : ControllerBase
     {
-        // TODOs: create UsersContextrepository
-
-        private readonly UsersContext _context;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly UserManager<AppUser> _userManager;
         private readonly ITokenValidator _validator;
 
-        public AdminController(UsersContext context, SignInManager<AppUser> signInManager, UserManager<AppUser> userManager, ITokenValidator validator)
+        public AdminController(SignInManager<AppUser> signInManager, UserManager<AppUser> userManager, ITokenValidator validator)
         {
-            _context = context;
             _signInManager = signInManager;
             _userManager = userManager;
             _validator = validator;
