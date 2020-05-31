@@ -84,7 +84,7 @@ async function onSignIn(googleUser) {
             'Content-Type': 'application/json',
             //'Authorization': 'Bearer ' + id_token
         },
-        body: JSON.stringify({ "token": id_token })
+        body: JSON.stringify({ "Id_Token": id_token })
     });
 }
 

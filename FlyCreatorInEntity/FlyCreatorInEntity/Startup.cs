@@ -17,6 +17,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authentication.Google;
 using FlyCreator.Models;
+using FlyCreator.Interfaces;
 
 namespace FlyCreator
 {
@@ -43,7 +44,6 @@ namespace FlyCreator
                 builder => builder.AllowAnyOrigin().WithMethods("GET", "PUT", "POST").AllowAnyHeader())
             );
 
-
             //services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
             //    .AddIdentityServerAuthentication(options =>
             //    {
@@ -66,6 +66,7 @@ namespace FlyCreator
             services.AddScoped<IMaterialRepository, MaterialRepository>();
             services.AddScoped<IFlyRepository, FlyRepository>();
             services.AddScoped<IComponentRepository, ComponentRepository>();
+            services.AddScoped<ITokenValidator, GoogleTokenValidator>();
 
             services.AddAuthentication()
                 .AddGoogle(options =>

@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
 using FlyCreator.DataLayer;
+using FlyCreator.Interfaces;
 using FlyCreator.Models;
 using Google.Apis.Auth;
 using Microsoft.AspNetCore.Authentication;
@@ -29,37 +31,23 @@ namespace FlyCreator.Controllers
         private readonly UsersContext _context;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly UserManager<AppUser> _userManager;
+        private readonly ITokenValidator _validator;
 
-        public AdminController(UsersContext context, SignInManager<AppUser> signInManager, UserManager<AppUser> userManager)
+        public AdminController(UsersContext context, SignInManager<AppUser> signInManager, UserManager<AppUser> userManager, ITokenValidator validator)
         {
             _context = context;
             _signInManager = signInManager;
             _userManager = userManager;
+            _validator = validator;
         }
 
         [HttpPost("token")]
         public async Task GetToken(GoogleToken token)
         {
-            var gottenT = token.token;
+            var payload = _validator.GeneratePayload(token);
+            var isValidToken = _validator.ValidateToken(payload);
 
-            // make a config
-            var audienceList = new List<string>()
-            {
-                "733506587937-chja2snvhu4cppd6ug4fnrp0bo2aqt8q.apps.googleusercontent.com"
-            };
-
-            // first check audience 
-            var payload = GoogleJsonWebSignature.ValidateAsync(gottenT, new GoogleJsonWebSignature.ValidationSettings()
-            {
-                Audience = audienceList
-            }).Result;
-
-            // then check issuer
-            var issuerClaim = (payload.Issuer == "accounts.google.com" || payload.Issuer == "https://accounts.google.com");
-
-            var tokenVerified = (payload != null && issuerClaim == true);
-
-            if (tokenVerified)
+            if (isValidToken)
             {
                 // need something other than email, maybe sub
                 var registeredUser = await _userManager.FindByEmailAsync(payload.Email);
