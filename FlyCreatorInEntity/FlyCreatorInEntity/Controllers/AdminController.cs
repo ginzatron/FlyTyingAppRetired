@@ -27,10 +27,10 @@ namespace FlyCreator.Controllers
         // TODOs: create UsersContextrepository
 
         private readonly UsersContext _context;
-        private readonly SignInManager<IdentityUser> _signInManager;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<AppUser> _signInManager;
+        private readonly UserManager<AppUser> _userManager;
 
-        public AdminController(UsersContext context, SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager)
+        public AdminController(UsersContext context, SignInManager<AppUser> signInManager, UserManager<AppUser> userManager)
         {
             _context = context;
             _signInManager = signInManager;
@@ -69,7 +69,8 @@ namespace FlyCreator.Controllers
                 {
                     var newUser = new Registration()
                     {
-                        Email = payload.Email
+                        Email = payload.Email,
+                        SubjectId = payload.Subject
                     };
 
                     await RegisterUser(newUser);
@@ -84,10 +85,11 @@ namespace FlyCreator.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new IdentityUser
+                var user = new AppUser
                 {
                     UserName = newUser.Email,
-                    Email = newUser.Email
+                    Email = newUser.Email,
+                    SubjectId = newUser.SubjectId
                 };
 
                 var result = await _userManager.CreateAsync(user);
@@ -100,7 +102,7 @@ namespace FlyCreator.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> LogInUser(IdentityUser registeredUser)
+        public async Task<IActionResult> LogInUser(AppUser registeredUser)
         {
             if (ModelState.IsValid)
             {
