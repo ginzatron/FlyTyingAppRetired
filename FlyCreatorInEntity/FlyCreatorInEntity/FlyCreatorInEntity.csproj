@@ -41,4 +41,8 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.6.0" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\html\" />
+    <Folder Include="wwwroot\js\" />
+  </ItemGroup>
 </Project>
