@@ -10,6 +10,7 @@ const getFlyForm = document.querySelector(".getFlyForm");
 getFlyForm.addEventListener('submit', GetFly)
 
 
+
 async function Login() {
     const logInUrl = "/admin/login";
 
@@ -51,15 +52,14 @@ async function Register() {
 
 async function GetFlys() {
     const flyUrl = "/fly";
-    const flyContainer = document.querySelector(".flyContainer");
-
+    const flySidebar = document.querySelector(".flySidebar");
 
     const response = await fetch(url + flyUrl);
     const data = await response.json();
     console.log(data);
 
     data.forEach(fly => {
-        flyContainer.innerHTML += `<div>${fly.name} id:${fly.id}</div><div>${fly.classification.classification}</div>`
+        flySidebar.innerHTML += `<div class="flyName">${fly.name} id:${fly.id}</div><div class="flyClass">${fly.classification.classification}</div>`
     })
 
 }
@@ -101,3 +101,22 @@ async function signOut() {
         }
     });
 }
+
+function onSuccess(googleUser) {
+    console.log("Logged in as: " + googleUser.getBasicProfile().getName());
+  }
+  function onFailure(error) {
+    console.log(error);
+  }
+
+  function renderButton() {
+    gapi.signin2.render("my-signin2", {
+      scope: "profile email",
+      width: 240,
+      height: 50,
+      longtitle: true,
+      theme: "dark",
+      onsuccess: onSuccess,
+      onfailure: onFailure,
+    });
+  }

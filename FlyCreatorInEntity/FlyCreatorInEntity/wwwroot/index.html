@@ -1,26 +1,36 @@
 ﻿<!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta name="google-signin-client_id"
-        content="733506587937-chja2snvhu4cppd6ug4fnrp0bo2aqt8q.apps.googleusercontent.com">
+    <meta
+      name="google-signin-client_id"
+      content="733506587937-chja2snvhu4cppd6ug4fnrp0bo2aqt8q.apps.googleusercontent.com"
+    />
     <link rel="stylesheet" href="css/styles.css" />
     <title>TheVise</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="logo">THE VISE LOGO</div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#">LogIn</a></li>
-                <li><a href="#">Flys</a></li>
-                <li><a href="#">Create Flys</a></li>
-            </ul>
-        </nav>
-        <a class="button" href="#" type="button">Contact</a>
+      <div class="logo">THE VISE LOGO</div>
+      <div id="my-signin2"></div>
+      <a href="#" onclick="signOut();">Sign out</a>
+      <nav>
+        <ul class="nav-links">
+          <li id="getFlys"><a href="#">Flys</a></li>
+          <li><a href="#">Create Flys</a></li>
+        </ul>
+      </nav>
+      <a class="button" href="#" type="button">Contact</a>
     </header>
-</body>
 
+    <div class="flySidebar"></div>
+
+    <script src="app.js"></script>
+    <script
+      src="https://apis.google.com/js/platform.js?onload=renderButton"
+      async
+      defer
+    ></script>
+  </body>
 </html>
