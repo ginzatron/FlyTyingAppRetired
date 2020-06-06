@@ -13,7 +13,7 @@
   <body>
     <header>
       <div class="logo">THE VISE LOGO</div>
-      <div id="my-signin2"></div>
+      <div id="g-signin2" data-onsuccess="onSignIn"></div>
       <a href="#" onclick="signOut();">Sign out</a>
       <nav>
         <ul class="nav-links">
@@ -23,6 +23,14 @@
       </nav>
       <a class="button" href="#" type="button">Contact</a>
     </header>
+
+    <section class="createFlySection">
+      <form class="createFlyForm">
+        <label for="name">Fly Name</label>
+        <input id="name" value="name" />
+        <button class="saveFly" type="submit">Save Fly</button>
+      </form>
+    </section>
 
     <div class="flySidebar"></div>
 

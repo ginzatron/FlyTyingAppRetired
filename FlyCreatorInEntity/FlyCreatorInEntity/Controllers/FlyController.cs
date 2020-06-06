@@ -8,27 +8,35 @@ using FlyCreator.Models;
 using FlyCreator.Repositorys;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FlyCreatorInEntity.Controllers
 {
     [Route("api/fly")]
     [ApiController]
-    //[Authorize]
+    [Authorize]
     public class FlyController : ControllerBase
     {
         private readonly IFlyRepository _flyRepo;
+        private UserManager<AppUser> _userManager;
 
-        public FlyController(IFlyRepository flyRepo)
+        public FlyController(IFlyRepository flyRepo, UserManager<AppUser> userManager)
         {
             _flyRepo = flyRepo;
+            _userManager = userManager;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAllFlys()
         {
-            return Ok(await _flyRepo.GetAllFlysAsync());
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            var flys = await _flyRepo.GetAllFlysAsync();
+            
+            return Ok(flys.Where(f => f.UserId.ToString() == user.Id));
         }
 
         [HttpGet("{id}")]
@@ -84,8 +92,7 @@ namespace FlyCreatorInEntity.Controllers
                 ClassificationId = fly.FlyClassificationId,
                 DateCreated = DateTime.Now,
                 LastEdited = DateTime.Now,
-                // TODO will be the signed in user
-                //UserId = 1
+                UserId = new Guid("9326b724-56b2-45cd-a222-56919931d475")
             };
             
             _flyRepo.AddFly(newFly);
