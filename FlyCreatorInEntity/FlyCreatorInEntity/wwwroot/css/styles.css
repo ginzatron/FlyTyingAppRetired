@@ -4,7 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #24252a;
+  background-color: #cfd0da;
 }
 
 li,
@@ -63,4 +63,9 @@ header {
 
 .flyName .flyClass {
   color: white;
+}
+
+.createFlySection {
+  display: flex;
+  justify-content: center;
 }
