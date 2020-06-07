@@ -3,15 +3,60 @@
 const FlysButton = document.querySelector("#getFlys");
 FlysButton.addEventListener('click', GetFlys);
 
-const RegisterButton = document.querySelector("#register");
-RegisterButton.addEventListener('click', Register);
+const createFlyForm = document.querySelector(".createFlyForm");
+createFlyForm.addEventListener('submit', SaveFly);
 
-const getFlyForm = document.querySelector(".getFlyForm");
-getFlyForm.addEventListener('submit', GetFly)
+async function GetFlys() {
+    const flyUrl = "/fly";
+    const flySidebar = document.querySelector(".flySidebar");
 
+    const response = await fetch(url + flyUrl);
+    const data = await response.json();
+    console.log(data);
 
+    data.forEach(fly => {
+        flySidebar.innerHTML += `<div class="flyName">${fly.name} id:${fly.id}</div><div class="flyClass">${fly.classification.classification}</div>`
+    })
+}
 
-async function Login() {
+async function SaveFly(event){
+    event.preventDefault();
+    const saveFlyUrl = "/fly";
+    let newFly = {
+        name: event.currentTarget.name.value,
+        flyclassificationid:  event.currentTarget.flyclassificationid.value
+    };
+
+    await fetch(url+saveFlyUrl,{
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newFly)
+    });
+}
+
+async function PopulateClassification(){
+    const classUrl = "/flyClassifications";
+    const selectFields = document.querySelector('.flyClass');
+
+    const response = await fetch(url + classUrl);
+    data = await response.json();
+    let options = data.map(option => `<option value=${option.id}>${option.classification}</option>`).join(' ');
+    selectFields.innerHTML = options;
+}
+
+async function GetFly(event) {
+    event.preventDefault();
+    const flyId = event.currentTarget.flyId.value;
+    const flyUrl = `/fly/${flyId}`;
+
+    const response = await fetch(url + flyUrl);
+    const data = await response.json();
+    console.log(data);
+}
+
+ async function Login() {
     const logInUrl = "/admin/login";
 
     const response = await fetch(url + logInUrl, {
@@ -30,7 +75,7 @@ async function Login() {
     console.log(data);
 }
 
-async function Register() {
+ async function Register() {
     const registerUrl = "/admin/register";
 
     const response = await fetch(url + registerUrl, {
@@ -50,31 +95,7 @@ async function Register() {
 
 }
 
-async function GetFlys() {
-    const flyUrl = "/fly";
-    const flySidebar = document.querySelector(".flySidebar");
-
-    const response = await fetch(url + flyUrl);
-    const data = await response.json();
-    console.log(data);
-
-    data.forEach(fly => {
-        flySidebar.innerHTML += `<div class="flyName">${fly.name} id:${fly.id}</div><div class="flyClass">${fly.classification.classification}</div>`
-    })
-
-}
-
-async function GetFly(event) {
-    event.preventDefault();
-    const flyId = event.currentTarget.flyId.value;
-    const flyUrl = `/fly/${flyId}`;
-
-    const response = await fetch(url + flyUrl);
-    const data = await response.json();
-    console.log(data);
-}
-
-async function onSignIn(googleUser) {
+ async function onSignIn(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;
     let url = "https://localhost:44329/api/admin/token";
 
@@ -90,6 +111,22 @@ async function onSignIn(googleUser) {
     console.log("Logged in as: " + googleUser.getBasicProfile().getName());
 }
 
+ function onFailure(error) {
+    console.log(error);
+  }
+
+function renderButton() {
+    gapi.signin2.render("g-signin2", {
+      scope: "profile email",
+      width: 240,
+      height: 50,
+      longtitle: true,
+      theme: "dark",
+      onsuccess: onSignIn,
+      onfailure: onFailure,
+    });
+  }
+
 async function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
@@ -104,18 +141,4 @@ async function signOut() {
     });
 }
 
-  function onFailure(error) {
-    console.log(error);
-  }
-
-  function renderButton() {
-    gapi.signin2.render("g-signin2", {
-      scope: "profile email",
-      width: 240,
-      height: 50,
-      longtitle: true,
-      theme: "dark",
-      onsuccess: onSignIn,
-      onfailure: onFailure,
-    });
-  }
+PopulateClassification();
