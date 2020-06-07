@@ -87,12 +87,14 @@ namespace FlyCreatorInEntity.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateFly(FlyDTO fly)
         {
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+
             var newFly = new Fly() {
                 Name = fly.Name,
-                ClassificationId = fly.FlyClassificationId,
+                ClassificationId = Int32.Parse(fly.FlyClassificationId),
                 DateCreated = DateTime.Now,
                 LastEdited = DateTime.Now,
-                UserId = new Guid("9326b724-56b2-45cd-a222-56919931d475")
+                UserId = new Guid(user.Id)
             };
             
             _flyRepo.AddFly(newFly);

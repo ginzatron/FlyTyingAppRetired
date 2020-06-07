@@ -8,6 +8,6 @@ namespace FlyCreator.DTOs
     public class FlyDTO
     {
         public string Name { get; set; }
-        public int FlyClassificationId { get; set; }
+        public string FlyClassificationId { get; set; }
     }
 }
