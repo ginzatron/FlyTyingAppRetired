@@ -8,20 +8,21 @@ createFlyForm.addEventListener('submit', SaveFly);
 
 async function GetFlys() {
     const flyUrl = "/fly";
-    const flySidebar = document.querySelector(".flySidebar");
+    let flySidebar = document.querySelector(".flySidebar");
 
     const response = await fetch(url + flyUrl);
     const data = await response.json();
     console.log(data);
 
     data.forEach(fly => {
-        flySidebar.innerHTML += `<div class="flyName">${fly.name} id:${fly.id}</div><div class="flyClass">${fly.classification.classification}</div>`
+        flySidebar.innerHTML += `<div class="flyName">${fly.name}</div><div class="flyClass">${fly.classification.classification}</div>`
     })
 }
 
 async function SaveFly(event){
     event.preventDefault();
     const saveFlyUrl = "/fly";
+    let flySidebar = document.querySelector(".flySidebar");
     let newFly = {
         name: event.currentTarget.name.value,
         flyclassificationid:  event.currentTarget.flyclassificationid.value
@@ -34,6 +35,9 @@ async function SaveFly(event){
         },
         body: JSON.stringify(newFly)
     });
+    flySidebar = document.querySelector(".flySidebar").innerHTML = "";
+
+    GetFlys();
 }
 
 async function PopulateClassification(){
@@ -142,3 +146,4 @@ async function signOut() {
 }
 
 PopulateClassification();
+GetFlys();
