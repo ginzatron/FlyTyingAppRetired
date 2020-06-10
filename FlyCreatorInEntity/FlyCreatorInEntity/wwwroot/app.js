@@ -12,7 +12,6 @@ async function GetFlys() {
 
     const response = await fetch(url + flyUrl);
     const data = await response.json();
-    console.log(data);
 
     data.forEach(fly => {
         flySidebar.innerHTML += `<div class="flyName">${fly.name}</div><div class="flyClass">${fly.classification.classification}</div>`
@@ -28,16 +27,18 @@ async function SaveFly(event){
         flyclassificationid:  event.currentTarget.flyclassificationid.value
     };
 
-    await fetch(url+saveFlyUrl,{
+    const response = await fetch(url+saveFlyUrl,{
         method: 'post',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(newFly)
     });
-    flySidebar = document.querySelector(".flySidebar").innerHTML = "";
+    const data = await response.json();
+    console.log(data);
 
-    GetFlys();
+    flySidebar.innerHTML += `<div class="flyName">${data.name}</div><div class="flyClass">${data.classification.classification}</div>`;
+    //GetFlys();
 }
 
 async function PopulateClassification(){
@@ -102,6 +103,7 @@ async function GetFly(event) {
  async function onSignIn(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;
     let url = "https://localhost:44329/api/admin/token";
+    let flySidebar = document.querySelector(".flySidebar");
 
     const response = await fetch(url, {
         method: 'POST',
@@ -112,6 +114,7 @@ async function GetFly(event) {
         body: JSON.stringify({ "Id_Token": id_token })
     });
 
+    GetFlys();
     console.log("Logged in as: " + googleUser.getBasicProfile().getName());
 }
 
@@ -132,6 +135,7 @@ function renderButton() {
   }
 
 async function signOut() {
+    let flySidebar = document.querySelector(".flySidebar");
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
         console.log('User signed out.');
@@ -143,6 +147,8 @@ async function signOut() {
             'Content-Type': 'application/json',
         }
     });
+
+    flySidebar.innerHTML = '';
 }
 
 PopulateClassification();
