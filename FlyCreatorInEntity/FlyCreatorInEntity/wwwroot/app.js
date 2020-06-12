@@ -38,7 +38,6 @@ async function SaveFly(event){
     console.log(data);
 
     flySidebar.innerHTML += `<div class="flyName">${data.name}</div><div class="flyClass">${data.classification.classification}</div>`;
-    //GetFlys();
 }
 
 async function PopulateClassification(){
@@ -51,9 +50,9 @@ async function PopulateClassification(){
     selectFields.innerHTML = options;
 }
 
-async function GetFly(event) {
-    event.preventDefault();
-    const flyId = event.currentTarget.flyId.value;
+async function GetFly(flyId) {
+    //event.preventDefault();
+    //const flyId = event.currentTarget.flyId.value;
     const flyUrl = `/fly/${flyId}`;
 
     const response = await fetch(url + flyUrl);
