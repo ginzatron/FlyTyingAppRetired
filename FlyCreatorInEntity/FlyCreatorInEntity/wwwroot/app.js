@@ -1,8 +1,5 @@
 ﻿const url = "https://localhost:44329/api";
 
-const FlysButton = document.querySelector("#getFlys");
-FlysButton.addEventListener('click', GetFlys);
-
 const createFlyForm = document.querySelector(".createFlyForm");
 createFlyForm.addEventListener('submit', SaveFly);
 
@@ -37,7 +34,7 @@ async function SaveFly(event){
     const data = await response.json();
     console.log(data);
 
-    flySidebar.innerHTML += `<div class="flyName">${data.name}</div><div class="flyClass">${data.classification.classification}</div>`;
+    flySidebar.innerHTML += `<div class="flyLink"><a href="/editfly.html?id=${data.id}" class="flyName">${data.name}</a></div>`;
 }
 
 async function PopulateClassification(){
