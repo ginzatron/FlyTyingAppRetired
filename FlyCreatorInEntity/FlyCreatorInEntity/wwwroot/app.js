@@ -14,7 +14,7 @@ async function GetFlys() {
     const data = await response.json();
 
     data.forEach(fly => {
-        flySidebar.innerHTML += `<div class="flyName">${fly.name}</div><div class="flyClass">${fly.classification.classification}</div>`
+        flySidebar.innerHTML += `<div class="flyLink"><a href="/editfly.html?id=${fly.id}" class="flyName">${fly.name}</a></div>`
     })
 }
 
@@ -152,4 +152,3 @@ async function signOut() {
 }
 
 PopulateClassification();
-GetFlys();
