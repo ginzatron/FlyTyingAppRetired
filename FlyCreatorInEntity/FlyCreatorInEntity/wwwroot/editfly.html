@@ -7,5 +7,17 @@
   </head>
   <body>
     <p>youarehere</p>
+
+    <script src="app.js"></script>
+    <script>
+      const querystring = window.location.search;
+      console.log(querystring);
+
+      const params = new URLSearchParams(querystring);
+      const flyId = params.get("id");
+      console.log(flyId);
+
+      GetFly(flyId);
+    </script>
   </body>
 </html>
