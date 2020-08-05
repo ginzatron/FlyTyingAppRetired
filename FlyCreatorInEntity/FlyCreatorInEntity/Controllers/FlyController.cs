@@ -18,16 +18,18 @@ namespace FlyCreatorInEntity.Controllers
 {
     [Route("api/fly")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class FlyController : ControllerBase
     {
         private readonly IFlyRepository _flyRepo;
         private UserManager<AppUser> _userManager;
+        private FlyDbContext _context;
 
-        public FlyController(IFlyRepository flyRepo, UserManager<AppUser> userManager)
+        public FlyController(IFlyRepository flyRepo, UserManager<AppUser> userManager, FlyDbContext context)
         {
             _flyRepo = flyRepo;
             _userManager = userManager;
+            _context = context;
         }
 
         [HttpGet]
@@ -42,6 +44,7 @@ namespace FlyCreatorInEntity.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetFly(int id)
         {
+            // should only be able to get yoru fly or flys that are marked "shareable"
             var fly = await _flyRepo.GetFlyAsync(id);
 
             var returnFly = convertFlytoReturnFlyDTO(fly);
@@ -62,7 +65,7 @@ namespace FlyCreatorInEntity.Controllers
             {
                 flyId = fly.Id,
                 flyName = fly.Name,
-                flyClassificationId = fly.ClassificationId,
+                flyClassificationId = fly.Classification.Id,
                 flyClassification = fly.Classification.Classification,
                 components = returnComponents
             };
@@ -73,13 +76,13 @@ namespace FlyCreatorInEntity.Controllers
             return new ReturnComponentDTO()
             {
                 componentId = component.Id,
-                materialId = component.MaterialId,
+                materialId = component.Material.Id,
                 materialName = component.Material.Name,
                 materialCategoryId = component.Material.MaterialCategory.Id,
                 materialCategory = component.Material.MaterialCategory.Name,
-                materialOptionId = component.MaterialOptionId,
+                materialOptionId = component.MaterialOption.Id,
                 materialOption = component.MaterialOption.Value,
-                sectionId = component.SectionId,
+                sectionId = component.Section.Id,
                 section = component.Section.Name
             };
         }
@@ -91,7 +94,7 @@ namespace FlyCreatorInEntity.Controllers
 
             var newFly = new Fly() {
                 Name = fly.Name,
-                ClassificationId = Int32.Parse(fly.FlyClassificationId),
+                Classification = await _context.FlyClassifications.FindAsync(fly.FlyClassificationId),
                 DateCreated = DateTime.Now,
                 LastEdited = DateTime.Now,
                 UserId = new Guid(user.Id)
