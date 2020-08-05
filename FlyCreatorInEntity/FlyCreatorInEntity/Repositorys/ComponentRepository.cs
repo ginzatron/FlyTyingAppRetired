@@ -32,6 +32,7 @@ namespace FlyCreator.Repositorys
 
             foreach (var component in existingComponents)
             {
+                // if the component is not in the returned list of components we remove it
                 if (!updatedComponentIds.Contains(component.Id))
                     _context.Components.Remove(component);
             }
@@ -41,24 +42,26 @@ namespace FlyCreator.Repositorys
             {
                 var component = await _context.Components.FindAsync(componentDTO.Id);
 
+                // if a returned component is not already on the fly, we make a new one
                 if (component == null)
                 {
                     var newComponent = new Component()
                     {
                         FlyId = flyId,
-                        MaterialId = componentDTO.MaterialId,
-                        MaterialOptionId = componentDTO.MaterialOptionId,
-                        SectionId = componentDTO.SectionId,
+                        Material = await _context.Materials.FindAsync(componentDTO.MaterialId),
+                        MaterialOption = await _context.MaterialOptions.FindAsync(componentDTO.MaterialOptionId),
+                        Section = await _context.Sections.FindAsync(componentDTO.SectionId),
                         DateCreated = DateTime.Now,
                         LastEdited = DateTime.Now
                     };
                     await _context.Components.AddAsync(newComponent);
                 }
+                // if the component exists, we update the properties
                 else
                 {
-                    component.MaterialId = componentDTO.MaterialId;
-                    component.MaterialOptionId = componentDTO.MaterialOptionId;
-                    component.SectionId = componentDTO.SectionId;
+                    component.Material = await _context.Materials.FindAsync(componentDTO.MaterialId);
+                    component.MaterialOption = await _context.MaterialOptions.FindAsync(componentDTO.MaterialOptionId);
+                    component.Section = await _context.Sections.FindAsync(componentDTO.SectionId);
                     component.LastEdited = DateTime.Now;
                 }
             }

@@ -12,7 +12,6 @@ namespace FlyCreator.Models
         public string Name { get; set; }
         public Guid UserId { get; set; }
 
-        public int ClassificationId { get; set; }
         public FlyClassification Classification { get; set; }
 
         public DateTime DateCreated { get; set; }

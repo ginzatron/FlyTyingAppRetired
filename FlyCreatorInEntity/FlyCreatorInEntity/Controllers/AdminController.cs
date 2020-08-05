@@ -64,7 +64,7 @@ namespace FlyCreator.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> RegisterUser(Registration newUser)
+        private async Task<IActionResult> RegisterUser(Registration newUser)
         {
             if (ModelState.IsValid)
             {

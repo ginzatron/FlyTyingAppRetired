@@ -9,13 +9,8 @@ namespace FlyCreator.Models
     {
         public int Id { get; set; }
         public int FlyId { get; set; }
-        public int MaterialId { get; set; }
         public Material Material { get; set; }
-
-        public int MaterialOptionId { get; set; }
         public MaterialOption MaterialOption { get; set; }
-
-        public int SectionId { get; set; }
         public Section Section { get; set; }
 
         public DateTime DateCreated { get; set; }
