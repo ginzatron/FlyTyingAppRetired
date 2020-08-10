@@ -57,45 +57,6 @@ async function GetFly(flyId) {
     console.log(data);
 }
 
- async function Login() {
-    const logInUrl = "/admin/login";
-
-    const response = await fetch(url + logInUrl, {
-        method: 'post',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            "email": "njginsburg@gmail.com",
-            "password": "Test123!",
-            "rememberMe": false
-        })
-    });
-
-    const data = await response.json();
-    console.log(data);
-}
-
- async function Register() {
-    const registerUrl = "/admin/register";
-
-    const response = await fetch(url + registerUrl, {
-        method: 'post',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            "email": "ekginsburg@gmail.com",
-            "password": "Test123!",
-            "confirmPassword": "Test123!"
-        })
-    });
-
-    const data = await response.json();
-    console.log(data);
-
-}
-
  async function onSignIn(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;
     let url = "https://localhost:44329/api/admin/token";
