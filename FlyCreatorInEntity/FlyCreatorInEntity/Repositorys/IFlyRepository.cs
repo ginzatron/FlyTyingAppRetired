@@ -6,14 +6,8 @@ using System.Threading.Tasks;
 
 namespace FlyCreator.Repositorys
 {
-    public interface IFlyRepository
+    public interface IFlyRepository : IRepository<Fly>
     {
-        Task<IEnumerable<Fly>> GetAllFlysAsync();
 
-        Task<Fly> GetFlyAsync(int id);
-
-        void AddFly(Fly fly);
-
-        Task<bool> SaveChangesAsync();
     }
 }

@@ -8,14 +8,10 @@ using System.Threading.Tasks;
 
 namespace FlyCreator.Repositorys
 {
-    public class FlyRepository : IFlyRepository
+    public class FlyRepository : EfRepository<Fly>, IFlyRepository
     {
-        private readonly FlyDbContext _context;
-
         public FlyRepository(FlyDbContext context)
-        {
-            _context = context;
-        }
+            : base(context) { }
 
         public async Task<IEnumerable<Fly>> GetAllFlysAsync()
         {

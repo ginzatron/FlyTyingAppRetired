@@ -67,6 +67,7 @@ namespace FlyCreator
             services.AddScoped<IFlyRepository, FlyRepository>();
             services.AddScoped<IComponentRepository, ComponentRepository>();
             services.AddScoped<ITokenValidator, GoogleTokenValidator>();
+            services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>)); // what does this mean?
 
             services.AddAuthentication()
                 .AddGoogle(options =>
