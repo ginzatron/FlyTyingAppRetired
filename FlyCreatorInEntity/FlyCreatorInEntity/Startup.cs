@@ -35,7 +35,6 @@ namespace FlyCreator
             services.AddControllers();
 
             services.AddDbContext<FlyDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDbContext<MaterialsContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddDbContext<UsersContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddIdentity<AppUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<UsersContext>();
@@ -65,18 +64,18 @@ namespace FlyCreator
 
             services.AddScoped<IMaterialRepository, MaterialRepository>();
             services.AddScoped<IFlyRepository, FlyRepository>();
-            services.AddScoped<IComponentRepository, ComponentRepository>();
+            //services.AddScoped<IComponentRepository, ComponentRepository>();
             services.AddScoped<ITokenValidator, GoogleTokenValidator>();
             services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>)); // what does this mean?
 
-            services.AddAuthentication()
-                .AddGoogle(options =>
-                {
-                    IConfigurationSection googleAuthNSection = Configuration.GetSection("Authentication:Google");
-
-                    options.ClientId = googleAuthNSection["ClientId"];
-                    options.ClientSecret = googleAuthNSection["ClientSecret"];
-                });
+            // services.AddAuthentication()
+            //     .AddGoogle(options =>
+            //     {
+            //         IConfigurationSection googleAuthNSection = Configuration.GetSection("Authentication:Google");
+            //
+            //         options.ClientId = googleAuthNSection["ClientId"];
+            //         options.ClientSecret = googleAuthNSection["ClientSecret"];
+            //     });
 
             //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             //    .AddJwtBearer(options =>

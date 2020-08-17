@@ -26,19 +26,19 @@ namespace FlyCreatorInEntity.Controllers
             _flyRepo = flyRepo;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> EditFlyComponents(string fly_Id, IEnumerable<ComponentDTO> components)
-        {
-            var flyid = int.Parse(fly_Id);
-
-            await _componentRepo.UpdateComponentsOnFly(flyid, components);
-
-            await _componentRepo.SaveChangesAsync();
-
-            var updatedFly = await _flyRepo.GetFlyAsync(flyid);
-
-            return Ok(updatedFly);
-        }
+        // [HttpPost]
+        // public async Task<IActionResult> EditFlyComponents(string fly_Id, IEnumerable<ComponentDTO> components)
+        // {
+        //     var flyid = int.Parse(fly_Id);
+        //
+        //     await _componentRepo.UpdateComponentsOnFly(flyid, components);
+        //
+        //     await _componentRepo.SaveChangesAsync();
+        //
+        //     var updatedFly = await _flyRepo.GetFlyAsync(flyid);
+        //
+        //     return Ok(updatedFly);
+        // }
 
         //[HttpGet]
         //public async Task<ActionResult<IEnumerable<Component>>> GetComponents()

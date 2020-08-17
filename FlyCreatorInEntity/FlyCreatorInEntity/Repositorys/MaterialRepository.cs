@@ -11,9 +11,9 @@ namespace FlyCreator.Repositorys
 {
     public class MaterialRepository : IMaterialRepository
     {
-        private readonly MaterialsContext _context;
+        private readonly FlyDbContext _context;
 
-        public MaterialRepository(MaterialsContext context)
+        public MaterialRepository(FlyDbContext context)
         {
             _context = context;
         }

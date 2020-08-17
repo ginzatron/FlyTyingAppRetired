@@ -16,6 +16,18 @@ namespace FlyCreator.DataLayer
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Fly>()
+                .HasMany(f => f.Components)
+                .WithOne(f => f.fly);
+
+            modelBuilder.Entity<Component>()
+                .Property<int>("FlyId");
+
+            modelBuilder.Entity<Component>()
+                .HasOne(c => c.fly)
+                .WithMany(f => f.Components)
+                .HasForeignKey("FlyId");
+
         }
 
         public DbSet<UserNote> UserNotes { get; set; }
