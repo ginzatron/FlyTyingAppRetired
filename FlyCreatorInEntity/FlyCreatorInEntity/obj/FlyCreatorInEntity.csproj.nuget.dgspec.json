@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\FlyTyingApp\\FlyCreatorInEntity\\FlyCreatorInEntity\\FlyCreatorInEntity.csproj": {}
+    "C:\\Users\\Noah\\Documents\\GitHub\\FlyTyingApp\\FlyCreatorInEntity\\FlyCreatorInEntity\\FlyCreatorInEntity.csproj": {}
   },
   "projects": {
-    "C:\\FlyTyingApp\\FlyCreatorInEntity\\FlyCreatorInEntity\\FlyCreatorInEntity.csproj": {
+    "C:\\Users\\Noah\\Documents\\GitHub\\FlyTyingApp\\FlyCreatorInEntity\\FlyCreatorInEntity\\FlyCreatorInEntity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\FlyTyingApp\\FlyCreatorInEntity\\FlyCreatorInEntity\\FlyCreatorInEntity.csproj",
+        "projectUniqueName": "C:\\Users\\Noah\\Documents\\GitHub\\FlyTyingApp\\FlyCreatorInEntity\\FlyCreatorInEntity\\FlyCreatorInEntity.csproj",
         "projectName": "FlyCreator",
-        "projectPath": "C:\\FlyTyingApp\\FlyCreatorInEntity\\FlyCreatorInEntity\\FlyCreatorInEntity.csproj",
-        "packagesPath": "C:\\Users\\nginsburg\\.nuget\\packages\\",
-        "outputPath": "C:\\FlyTyingApp\\FlyCreatorInEntity\\FlyCreatorInEntity\\obj\\",
+        "projectPath": "C:\\Users\\Noah\\Documents\\GitHub\\FlyTyingApp\\FlyCreatorInEntity\\FlyCreatorInEntity\\FlyCreatorInEntity.csproj",
+        "packagesPath": "C:\\Users\\Noah\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Noah\\Documents\\GitHub\\FlyTyingApp\\FlyCreatorInEntity\\FlyCreatorInEntity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\nginsburg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Noah\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -25,8 +25,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.staging.onosys.com/nuget": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.0": {
@@ -60,21 +59,21 @@
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "[3.0.3, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[3.0.1, )"
+              "version": "[3.0.3, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[3.0.1, )"
+              "version": "[3.0.3, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.0.1, )"
+              "version": "[3.0.3, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
@@ -113,7 +112,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
