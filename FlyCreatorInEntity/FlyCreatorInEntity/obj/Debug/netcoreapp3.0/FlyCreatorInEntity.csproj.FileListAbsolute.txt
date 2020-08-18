@@ -140,7 +140,6 @@ C:\Users\Noah\Documents\GitHub\FlyCreatorInEntity\FlyCreatorInEntity\FlyCreatorI
 C:\Users\Noah\Documents\GitHub\FlyCreatorInEntity\FlyCreatorInEntity\FlyCreatorInEntity\bin\Debug\netcoreapp3.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Noah\Documents\GitHub\FlyCreatorInEntity\FlyCreatorInEntity\FlyCreatorInEntity\obj\Debug\netcoreapp3.0\FlyCreatorInEntity.csproj.CoreCompileInputs.cache
 C:\Users\Noah\Documents\GitHub\FlyCreatorInEntity\FlyCreatorInEntity\FlyCreatorInEntity\obj\Debug\netcoreapp3.0\FlyCreator.MvcApplicationPartsAssemblyInfo.cache
-C:\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\obj\Debug\netcoreapp3.0\FlyCreatorInEntity.csprojAssemblyReference.cache
 C:\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\obj\Debug\netcoreapp3.0\FlyCreatorInEntity.AssemblyInfoInputs.cache
 C:\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\obj\Debug\netcoreapp3.0\FlyCreatorInEntity.AssemblyInfo.cs
 C:\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\obj\Debug\netcoreapp3.0\FlyCreatorInEntity.csproj.CoreCompileInputs.cache
@@ -438,3 +437,10 @@ C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity
 C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\Noah\Documents\GitHub\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\obj\Debug\netcoreapp3.0\FlyCreatorInEntity.csprojAssemblyReference.cache
+C:\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\bin\Debug\netcoreapp3.0\Properties\serviceDependencies.json
+C:\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\bin\Debug\netcoreapp3.0\Properties\serviceDependencies.local.json
+C:\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Identity.Core.dll
+C:\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Identity.Stores.dll
+C:\FlyTyingApp\FlyCreatorInEntity\FlyCreatorInEntity\obj\Debug\netcoreapp3.0\FlyCreatorInEntity.csprojAssemblyReference.cache

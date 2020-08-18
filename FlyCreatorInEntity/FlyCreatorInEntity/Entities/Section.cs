@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace FlyCreator.Models
 {
-    public class MaterialCategory
+    public class Section
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
     }
 }

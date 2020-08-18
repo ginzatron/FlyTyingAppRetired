@@ -1,4 +1,5 @@
-﻿using FlyCreator.Models;
+﻿using FlyCreator.Entities;
+using FlyCreator.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;

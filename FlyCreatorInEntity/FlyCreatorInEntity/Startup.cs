@@ -18,6 +18,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authentication.Google;
 using FlyCreator.Models;
 using FlyCreator.Interfaces;
+using FlyCreator.Entities;
 
 namespace FlyCreator
 {
@@ -62,7 +63,7 @@ namespace FlyCreator
             //    });
             //});
 
-            services.AddScoped<IMaterialRepository, MaterialRepository>();
+            //services.AddScoped<IMaterialRepository, MaterialRepository>();
             services.AddScoped<IFlyRepository, FlyRepository>();
             //services.AddScoped<IComponentRepository, ComponentRepository>();
             services.AddScoped<ITokenValidator, GoogleTokenValidator>();

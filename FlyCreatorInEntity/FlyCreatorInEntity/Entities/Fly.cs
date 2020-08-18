@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using FlyCreator.Entities;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace FlyCreator.Models
     public class Fly : BaseEntity
     {
         public string Name { get; set; }
-        public Guid UserId { get; set; }
+        public AppUser AppUser { get; set; }
 
         public FlyClassification Classification { get; set; }
 

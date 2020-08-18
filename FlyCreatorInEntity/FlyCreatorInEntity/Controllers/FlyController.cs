@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FlyCreator.DataLayer;
 using FlyCreator.DTOs;
+using FlyCreator.Entities;
 using FlyCreator.Models;
 using FlyCreator.Repositorys;
 using Microsoft.AspNetCore.Authorization;

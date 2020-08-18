@@ -18,16 +18,15 @@ namespace FlyCreator.DataLayer
         {
             modelBuilder.Entity<Fly>()
                 .HasMany(f => f.Components)
-                .WithOne(f => f.fly);
+                .WithOne(f => f.Fly);
 
             modelBuilder.Entity<Component>()
-                .Property<int>("FlyId");
+                .Property<Guid>("FlyId");
 
             modelBuilder.Entity<Component>()
-                .HasOne(c => c.fly)
+                .HasOne(c => c.Fly)
                 .WithMany(f => f.Components)
                 .HasForeignKey("FlyId");
-
         }
 
         public DbSet<UserNote> UserNotes { get; set; }

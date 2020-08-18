@@ -1,24 +1,29 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace FlyCreatorInEntity.Migrations
+namespace FlyCreator.Migrations
 {
-    public partial class _04_11_2020_MaterialOptionParentMaterial : Migration
+    public partial class MaterialOnMaterialOption : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_MaterialOptions_Materials_MaterialId",
+                name: "FK_MaterialOptions_Materials_MaterialId1",
                 table: "MaterialOptions");
 
             migrationBuilder.DropIndex(
-                name: "IX_MaterialOptions_MaterialId",
+                name: "IX_MaterialOptions_MaterialId1",
                 table: "MaterialOptions");
 
             migrationBuilder.DropColumn(
                 name: "MaterialId",
                 table: "MaterialOptions");
 
-            migrationBuilder.AddColumn<int>(
+            migrationBuilder.DropColumn(
+                name: "MaterialId1",
+                table: "MaterialOptions");
+
+            migrationBuilder.AddColumn<Guid>(
                 name: "ParentMaterialId",
                 table: "MaterialOptions",
                 nullable: true);
@@ -55,17 +60,24 @@ namespace FlyCreatorInEntity.Migrations
                 name: "MaterialId",
                 table: "MaterialOptions",
                 type: "int",
+                nullable: false,
+                defaultValue: 0);
+
+            migrationBuilder.AddColumn<Guid>(
+                name: "MaterialId1",
+                table: "MaterialOptions",
+                type: "uniqueidentifier",
                 nullable: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_MaterialOptions_MaterialId",
+                name: "IX_MaterialOptions_MaterialId1",
                 table: "MaterialOptions",
-                column: "MaterialId");
+                column: "MaterialId1");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_MaterialOptions_Materials_MaterialId",
+                name: "FK_MaterialOptions_Materials_MaterialId1",
                 table: "MaterialOptions",
-                column: "MaterialId",
+                column: "MaterialId1",
                 principalTable: "Materials",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict);

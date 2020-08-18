@@ -5,15 +5,11 @@ using System.Threading.Tasks;
 
 namespace FlyCreator.Models
 {
-    public class Component
+    public class Component : BaseEntity
     {
-        public int Id { get; set; }
-        public Fly fly { get; set; }
+        public Fly Fly { get; set; }
         public Material Material { get; set; }
         public MaterialOption MaterialOption { get; set; }
         public Section Section { get; set; }
-
-        public DateTime DateCreated { get; set; }
-        public DateTime LastEdited { get; set; }
     }
 }

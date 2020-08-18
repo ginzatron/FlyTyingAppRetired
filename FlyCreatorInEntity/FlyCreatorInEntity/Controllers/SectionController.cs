@@ -49,7 +49,7 @@ namespace FlyCreatorInEntity.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> PutSection(int id, Section section)
+        public async Task<ActionResult> PutSection(Guid id, Section section)
         {
             if (id != section.Id)
             {

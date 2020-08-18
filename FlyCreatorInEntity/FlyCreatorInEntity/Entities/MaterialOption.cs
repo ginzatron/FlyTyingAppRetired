@@ -7,8 +7,8 @@ namespace FlyCreator.Models
 {
     public class MaterialOption
     {
-        public int Id { get; set; }
-        public int MaterialId { get; set; }
+        public Guid Id { get; set; }
+        public Material ParentMaterial { get; set; }
         public string Discriminator { get; set; }
         public string Value { get; set; }
     }

@@ -24,6 +24,14 @@
     <Compile Remove="Migrations\20200503195928_05_03_2020_UserClassAndNoteClass.Designer.cs" />
     <Compile Remove="Migrations\20200510181454_Add_Identiy_stores.cs" />
     <Compile Remove="Migrations\20200510181454_Add_Identiy_stores.Designer.cs" />
+    <Compile Remove="Migrations\20200817210637_db_init.cs" />
+    <Compile Remove="Migrations\20200817210637_db_init.Designer.cs" />
+    <Compile Remove="Migrations\20200817211713_EntityBaseClass.cs" />
+    <Compile Remove="Migrations\20200817211713_EntityBaseClass.Designer.cs" />
+    <Compile Remove="Migrations\20200818021649_GuidsUserForIds.cs" />
+    <Compile Remove="Migrations\20200818021649_GuidsUserForIds.Designer.cs" />
+    <Compile Remove="Migrations\20200818021831_GuidsUserForIds.cs" />
+    <Compile Remove="Migrations\20200818021831_GuidsUserForIds.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Google.Apis.Auth" Version="1.45.0" />
